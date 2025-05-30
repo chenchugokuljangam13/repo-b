@@ -1,0 +1,17 @@
+# repo-b: .github/workflows/reusable.yml
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+    secrets:
+      MY_SECRET:
+        required: true
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "User: ${{ inputs.username }}"
+      - run: echo "Secret: ${{ secrets.MY_SECRET }}"
