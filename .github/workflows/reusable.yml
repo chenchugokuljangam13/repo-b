@@ -13,5 +13,10 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "User: ${{ inputs.username }}"
-      - run: echo "Secret: ${{ secrets.MY_SECRET }}"
+      - name: print name
+        run: |
+          echo "User: ${{ inputs.username }}"
+
+      - name: print secret
+        run: |
+          echo "Secret: ${{ secrets.MY_SECRET }}"
